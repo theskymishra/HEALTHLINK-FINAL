@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   clinical-os:
     build:
@@ -13,7 +11,7 @@ services:
       - PORT=3000
       - NODE_ENV=production
       - MONGO_URI=${MONGO_URI}
-      - JWT_SECRET=${JWT_SECRET:-healthlink-clinical-os-jwt-secret-2026}
+      - JWT_SECRET=${JWT_SECRET}
     healthcheck:
       test: ["CMD-SHELL", "wget --spider -q http://localhost:3000/api/health || exit 1"]
       interval: 30s
